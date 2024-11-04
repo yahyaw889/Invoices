@@ -6,6 +6,30 @@
 @section('css')
     <!-- Sidemenu-respoansive-tabs css -->
     <link href="{{URL::asset('assets/plugins/sidemenu-responsive-tabs/css/sidemenu-responsive-tabs.css')}}" rel="stylesheet">
+    <style>
+        .google-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border: 1px solid #dfdfdf;
+    border-radius: 4px;
+    color: #333333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.google-btn img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.google-btn:hover {
+    background-color: #f1f1f1;
+}
+    </style>
 @endsection
 
 @section('content')
@@ -66,6 +90,10 @@
                                                     {{ __('تسجيل الدخول') }}
                                                 </button>
                                             </form>
+                                            <a class="google-btn btn-block my-5 text-center" href="{{ route('google.redirect') }}">
+                                                <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google Logo">
+                                                <span>Login with Google</span>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

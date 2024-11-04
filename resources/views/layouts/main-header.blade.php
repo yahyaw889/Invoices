@@ -20,7 +20,7 @@
             <div class="main-header-center mr-3 d-sm-none d-md-none d-lg-block">
                 <input class="form-control" placeholder="Search for anything..." id="search" type="search">
                 <button class="btn"><i class="fas fa-search d-none d-md-block"></i></button>
-                <ul id="searchResults" class="list-group" style="display: none; position: absolute; z-index: 1000;"></ul> <!-- Dropdown for suggestions -->
+                {{-- <ul id="searchResults" class="list-group" style="display: none; position: absolute; z-index: 1000;"></ul> <!-- Dropdown for suggestions --> --}}
             </div>
 
 
@@ -161,11 +161,11 @@
 <form action="/logout" method="POST" id="logout-form">
     @csrf
 </form>
-<div class="search" id="div_search" style="">
+{{-- <div class="search" id="div_search" style="">
     <select name="search" id="searchResult">
                 <option value="">yahya</option>
     </select>
-</div>
+</div> --}}
 
 
 @section('js')

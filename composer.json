@@ -8,6 +8,7 @@
         "php": "^8.2",
         "fx3costa/laravelchartjs": "^1.0",
         "laravel/framework": "^11.9",
+        "laravel/socialite": "^5.16",
         "laravel/telescope": "^5.2",
         "laravel/tinker": "^2.9",
         "maatwebsite/excel": "3.1.x-dev",
