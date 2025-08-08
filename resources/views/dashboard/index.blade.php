@@ -39,7 +39,7 @@
                         <div class="d-flex">
                             <div class="">
                                 <h4 class="tx-20 font-weight-bold mb-1 text-white">${{formatNumberShort($sum_total , 2)}}</h4>
-                                <p class="mb-0 tx-12 text-white op-7">{{round(($sum_total / $created_all_invoices) * 100 , 2) }}%</p>
+                                <p class="mb-0 tx-12 text-white op-7">{{round(($sum_total / (($created_all_invoices == 0 ? 1 : $created_all_invoices) == 0 ? 1 : ($created_all_invoices == 0 ? 1 : $created_all_invoices) )) * 100 , 2) ?? 0}}%</p>
                             </div>
                             <span class="float-right my-auto mr-auto">
 											<i class="fas fa-arrow-circle-up text-white"></i>
@@ -61,7 +61,7 @@
                         <div class="d-flex">
                             <div class="">
                                 <h4 class="tx-20 font-weight-bold mb-1 text-white">${{formatNumberShort($sum_unpaid , 2)}}</h4>
-                                <p class="mb-0 tx-12 text-white op-7">{{round(($sum_unpaid / $created_all_invoices) * 100 , 2) }}%</p>
+                                <p class="mb-0 tx-12 text-white op-7">{{round(($sum_unpaid / (($created_all_invoices == 0 ? 1 : $created_all_invoices) == 0 ? 1 : ($created_all_invoices == 0 ? 1 : $created_all_invoices) )) * 100 , 2) }}%</p>
                             </div>
                             <span class="float-right my-auto mr-auto">
 											<i class="fas fa-arrow-circle-down text-white"></i>
@@ -83,7 +83,7 @@
                         <div class="d-flex">
                             <div class="">
                                 <h4 class="tx-20 font-weight-bold mb-1 text-white">${{formatNumberShort($sum_paid , 2)}}</h4>
-                                <p class="mb-0 tx-12 text-white op-7">{{round(($sum_paid / $created_all_invoices) * 100 , 2) }}%</p>
+                                <p class="mb-0 tx-12 text-white op-7">{{round(($sum_paid / ($created_all_invoices == 0 ? 1 : $created_all_invoices)) * 100 , 2) }}%</p>
                             </div>
                             <span class="float-right my-auto mr-auto">
 											<i class="fas fa-arrow-circle-up text-white"></i>
@@ -105,7 +105,7 @@
                         <div class="d-flex">
                             <div class="">
                                 <h4 class="tx-20 font-weight-bold mb-1 text-white">${{formatNumberShort($sum_paid_part , 2)}}</h4>
-                                <p class="mb-0 tx-12 text-white op-7">{{round(($sum_paid_part / $created_all_invoices) * 100 , 2) }}%</p>
+                                <p class="mb-0 tx-12 text-white op-7">{{round(($sum_paid_part / ($created_all_invoices == 0 ? 1 : $created_all_invoices)) * 100 , 2) }}%</p>
                             </div>
                             <span class="float-right my-auto mr-auto">
 											<i class="fas fa-arrow-circle-down text-white"></i>
@@ -198,7 +198,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="">صافي الربح</div>
-                            <div class="h3 mt-2 mb-2"><b>${{formatNumberShort($total_wins)}}</b><span class="text-success tx-13 ml-2">(+35%)</span></div>
+                            <div class="h3 mt-2 mb-2"><b>${{formatNumberShort(($total_wins == 0 ? 1 : $total_wins))}}</b><span class="text-success tx-13 ml-2">(+35%)</span></div>
                         </div>
                         <div class="col-auto align-self-center ">
                             <div class="feature mt-0 mb-0">
@@ -209,9 +209,9 @@
                     <div class="">
                         <p class="mb-1">الربح لاخر شهر فقط</p>
                         <div class="progress progress-sm h-2 mb-1">
-                            <div class="progress-bar bg-success wd-{{round(($total_wins_month / $total_wins) * 100) > 50 ? 50 : 25 }} " role="progressbar"></div>
+                            <div class="progress-bar bg-success wd-{{round((($total_wins_month == 0 ? 1 : $total_wins) / ($total_wins == 0 ? 1 : $total_wins)) * 100) > 50 ? 50 : 25 }} " role="progressbar"></div>
                         </div>
-                        <small class="mb-0 text-muted">شهريا<span class="float-right text-muted">{{ round(($total_wins_month / $total_wins) * 100 , 2) }}%</span></small>
+                        <small class="mb-0 text-muted">شهريا<span class="float-right text-muted">{{ round((($total_wins_month == 0 ? 1 : $total_wins) / ($total_wins == 0 ? 1 : $total_wins)) * 100 , 2) }}%</span></small>
                     </div>
                 </div>
             </div>
